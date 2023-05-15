@@ -12,23 +12,23 @@ cup_with_ball = 1 + random.randint(0, 2)
 # setting the foundation
 
 def reset_game():
-      global l1
-      global l2
-      global cup_with_ball
-      global b1
-      global b2
-      global b3
-      b1["state"] = "active"
-      b2["state"] = "active"
-      b3["state"] = "active"
-      cup_with_ball = 1 + random.randint(0, 2)
-      l1.config(text="Click the cup that has the ball")
-      l2.config(text="") 
+    global l1
+    global l2
+    global cup_with_ball
+    global b1
+    global b2
+    global b3
+    b1["state"] = "active"
+    b2["state"] = "active"
+    b3["state"] = "active"
+    cup_with_ball = 1 + random.randint(0, 2)
+    l1.config(text="Click the cup that has the ball")
+    l2.config(text="")
 
 def button_disable():
-	b1["state"] = "disable"
-	b2["state"] = "disable"
-	b3["state"] = "disable"
+    b1["state"] = "disable"
+    b2["state"] = "disable"
+    b3["state"] = "disable"
 
 frame = Frame(root)
 frame.pack()
@@ -48,38 +48,38 @@ def is_cup(c_v):
 # defines labels, frames, and buttons
 
 l1 = Label(frame,
-           text="Press the cup that has the ball",
-           font=10)
+    text="Press the cup that has the ball",
+    font=10)
 
 l1.pack(side=LEFT)
 
 l2 = Label(root,
-           text="",
-           font="normal 20 bold",
-           bg="white",
-           width=35,
-           borderwidth=2,
-           relief="solid")
+    text="",
+    font="normal 20 bold",
+    bg="white",
+    width=35,
+    borderwidth=2,
+    relief="solid")
 l2.pack(pady=20)
 
 frame1 = Frame(root)
 frame1.pack()
 
 b1 = Button(frame1, text="Cup 1",
-			font=10, width=7,
-			command=lambda: is_cup(1))
+    font=10, width=7,
+    command=lambda: is_cup(1))
 
 b2 = Button(frame1, text="Cup 2",
-			font=10, width=7,
-			command=lambda: is_cup(2))
+    font=10, width=7,
+    command=lambda: is_cup(2))
 
 b3 = Button(frame1, text="Cup 3",
-			font=10, width=7,
-			command=lambda: is_cup(3))
+    font=10, width=7,
+    command=lambda: is_cup(3))
 
 Button(root, text="Reset Game",
-       font=10, fg="red",
-       bg="black", command=reset_game).pack(pady=20)
+    font=10, fg="red",
+    bg="black", command=reset_game).pack(pady=20)
 
 b1.pack(side=LEFT, padx=10)
 b2.pack(side=LEFT, padx=10)
